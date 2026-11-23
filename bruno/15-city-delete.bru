@@ -1,0 +1,19 @@
+meta {
+  name: Telepules torlese (token)
+  type: http
+  seq: 15
+}
+
+delete {
+  url: {{baseUrl}}/api/cities/{{cityId}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}

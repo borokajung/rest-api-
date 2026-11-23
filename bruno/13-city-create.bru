@@ -1,0 +1,31 @@
+meta {
+  name: Telepules letrehozasa (token)
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{baseUrl}}/api/cities
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "county_id": {{countyId}},
+    "zip_code": "1234",
+    "name": "Teszt város"
+  }
+}
+
+script:post-response {
+  bru.setEnvVar("cityId", res.body.city.id);
+}

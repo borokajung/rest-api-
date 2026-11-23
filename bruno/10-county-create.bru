@@ -1,0 +1,29 @@
+meta {
+  name: Megye letrehozasa (token)
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/api/counties
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "Teszt megye"
+  }
+}
+
+script:post-response {
+  bru.setEnvVar("countyId", res.body.county.id);
+}

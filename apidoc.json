@@ -1,0 +1,12 @@
+{
+  "name": "Irányítószám REST API",
+  "version": "1.0.0",
+  "description": "Laravel REST API megyékhez és településekhez (irányítószám). Az adatmódosító végpontok Sanctum Bearer tokent igényelnek.",
+  "title": "Irányítószám REST API dokumentáció",
+  "url": "http://localhost:8000",
+  "header": {
+    "title": "Használat",
+    "filename": "docs/apidoc-header.md"
+  },
+  "order": ["Auth", "Counties", "Cities"]
+}

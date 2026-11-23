@@ -1,0 +1,25 @@
+meta {
+  name: Telepules modositasa (token)
+  type: http
+  seq: 14
+}
+
+put {
+  url: {{baseUrl}}/api/cities/{{cityId}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "Teszt város (módosított)"
+  }
+}

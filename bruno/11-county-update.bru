@@ -1,0 +1,25 @@
+meta {
+  name: Megye modositasa (token)
+  type: http
+  seq: 11
+}
+
+put {
+  url: {{baseUrl}}/api/counties/{{countyId}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "Teszt megye (módosított)"
+  }
+}
